@@ -1,7 +1,15 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
@@ -47,6 +55,11 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
 }
 
 .header-right {
@@ -69,6 +82,7 @@ nav ul li a {
     padding: 0.5em 1em;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .account-button:hover {
@@ -112,4 +126,37 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .gallery-container img {
+        width: 45%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    .search-bar,
+    .account-button {
+        margin: 0.5em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container img {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-container,
+    .header-right {
+        margin: 0;
+    }
 }
